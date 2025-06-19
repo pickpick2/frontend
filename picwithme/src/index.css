@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-default: #a34eff;
+  --color-primary-light: #cb9bff;
+  --color-primary-lighter: #fcf9ff;
+  --color-text: #0b0b0b;
+  --color-text-white: #ffffff;
+  --color-border: #afafaf;
+
+  --color-success: #82dd55;
+  --color-warning: #edb95e;
+  --color-danger: #e23636;
+
+  --color-kakao: #f7e600;
+
+  --text-heading1: 24px;
+  --text-heading2: 22px;
+  --text-heading3: 20px;
+  --text-heading4: 18px;
+  --text-body1: 16px;
+  --text-body2: 14px;
+  --text-detail: 12px;
+}
+
+@font-face {
+  font-family: "PyeojinGothic";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/PyeojinGothic-Light.woff") format("opentype");
+}
+
+@font-face {
+  font-family: "PyeojinGothic";
+  font-weight: 500;
+  font-style: normal;
+  src: url("/fonts/PyeojinGothic-Regular.woff") format("opentype");
+}
+
+@font-face {
+  font-family: "PyeojinGothic";
+  font-weight: 600;
+  font-style: normal;
+  src: url("/fonts/PyeojinGothic-Medium.woff") format("opentype");
+}
+
+@font-face {
+  font-family: "PyeojinGothic";
+  font-weight: 700;
+  font-style: normal;
+  src: url("/fonts/PyeojinGothic-SemiBold.woff") format("opentype");
+}
+
+@font-face {
+  font-family: "PyeojinGothic";
+  font-weight: 800;
+  font-style: normal;
+  src: url("/fonts/PyeojinGothic-Bold.woff") format("opentype");
+}
+
+@layer base {
+  :root {
+    font-family: "PyeojinGothic", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji", "Apple Color Emoji", ui-sans-serif, system-ui,
+      sans-serif;
+    color: var(--color-text);
+    font-size: var(--text-body2);
+    letter-spacing: 0.04rem;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
