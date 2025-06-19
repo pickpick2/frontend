@@ -1,9 +1,10 @@
 import "./App.css";
+import Login from "@page/auth/Login";
 
 function App() {
   return (
     <>
-      <div className="bg-amber-50 text-amber-100">asdfjsdkfjkdjk</div>
+      <Login />
     </>
   );
 }
