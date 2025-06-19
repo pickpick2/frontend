@@ -1,6 +1,5 @@
 // src/pages/auth/Login.tsx
 import { useState } from "react";
-import AuthLayout from "@/components/Layouts/AuthLayout";
 import Eye from "@/assets/icons/eyes.svg?react";
 import Eyeoff from "@/assets/icons/sreyes.svg?react";
 
@@ -8,7 +7,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <AuthLayout>
+    <>
       <h1 className="text-[24px] font-bold text-[#A054FF]">로그인</h1>
 
       <form className="w-full max-w-sm flex flex-col gap-6">
@@ -48,7 +47,7 @@ const Login = () => {
 
       {/* 링크 */}
       <div className="text-sm text-gray-500 flex gap-2">
-        <a href="/find-id" className="hover:underline">
+        <a href="/findId" className="hover:underline">
           아이디 찾기
         </a>
         <span>|</span>
@@ -56,7 +55,7 @@ const Login = () => {
           비밀번호 찾기
         </a>
       </div>
-    </AuthLayout>
+    </>
   );
 };
 

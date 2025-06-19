@@ -9,7 +9,8 @@
     "baseUrl": ".", // 프로젝트 루트를 기준으로 설정
     "paths": {
       "@/*": ["src/*"],
-      "@page/*": ["src/pages/*"]
+      "@page/*": ["src/pages/*"],
+      "@components/*": ["src/components/*"]
     },
 
     /* Bundler mode */

@@ -1,10 +1,9 @@
-// src/components/Layout/AuthLayout.tsx
-import React from "react";
+import { Outlet } from "react-router";
 
-const AuthLayout = ({ children }: { children: React.ReactNode }) => {
+const AuthLayout = () => {
   return (
     <main className="w-full h-full flex flex-col items-center justify-center gap-8 p-16 bg-white">
-      {children}
+      <Outlet />
     </main>
   );
 };
