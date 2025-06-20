@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router";
 
-const FindId = () => {
+const FindPw = () => {
   const navigate = useNavigate();
 
   return (
     <>
-      <h1 className="text-[24px] font-bold text-[#A054FF]">아이디 찾기</h1>
+      <h1 className="text-[24px] font-bold text-[#A054FF]">비밀번호 찾기</h1>
       <form className="w-full max-w-sm flex flex-col gap-6">
         {/* 아이디 입력 */}
         <div className="relative">
@@ -20,19 +20,19 @@ const FindId = () => {
       <button
         type="submit"
         className="bg-[#A054FF] w-full max-w-sm text-white py-3 rounded-lg text-sm font-semibold shadow-md hover:bg-[#933bff] transition"
-        onClick={() => navigate("/login")}
+        onClick={() => navigate("/setPw")}
       >
-        로그인 하러가기
+        다음
       </button>
       <button
         type="submit"
         className="bg-[#A054FF] w-full max-w-sm  text-white py-3 rounded-lg text-sm font-semibold shadow-md hover:bg-[#933bff] transition"
-        onClick={() => navigate("/findPw")}
+        onClick={() => navigate("/findId")}
       >
-        비밀번호 찾기
+        아이디 찾기
       </button>
     </>
   );
 };
 
-export default FindId;
+export default FindPw;
