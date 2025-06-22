@@ -13,7 +13,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Navigate to='/auth/login' replace />} />
         <Route path='/auth' element={<AuthLayout />}>
-          <Route path='login' index element={<Login />} />
+          <Route index element={<Navigate to='login' replace />} />
+          <Route path='login' element={<Login />} />
           <Route path='findId' element={<FindId />} />
           <Route path='findPw' element={<FindPw />} />
         </Route>
