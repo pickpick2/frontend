@@ -1,57 +1,33 @@
-// src/pages/auth/Login.tsx
-import { useState } from "react";
-import Eye from "@/assets/icons/eyes.svg?react";
-import Eyeoff from "@/assets/icons/sreyes.svg?react";
+import { useState } from 'react';
+import Input from '@/components/ui/input/Input';
+import InputPw from '@/components/ui/input/inputPw';
+import Button from '@/components/ui/Button';
 
 const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+
+  const handleSubmit = () => {
+    // TO DO: 로그인 요청 처리
+  };
 
   return (
     <>
-      <h1 className="text-[24px] font-bold text-[#A054FF]">로그인</h1>
+      <h1 className='text-[24px] font-bold text-[#A054FF]'>로그인</h1>
 
-      <form className="w-full max-w-sm flex flex-col gap-6">
-        {/* 아이디 입력 */}
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="아이디를 입력해주세요."
-            className="w-full border-b border-gray-300 text-sm py-2 placeholder-gray-400 focus:outline-none"
-          />
-        </div>
-
-        {/* 비밀번호 입력 */}
-        <div className="relative">
-          <input
-            type={showPassword ? "text" : "password"}
-            placeholder="비밀번호를 입력해주세요."
-            className="w-full border-b border-gray-300 text-sm py-2 placeholder-gray-400 focus:outline-none pr-10"
-          />
-          <button
-            type="button"
-            onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 p-2 text-gray-400"
-          >
-            {showPassword ? <Eye /> : <Eyeoff />}
-          </button>
-        </div>
-
-        {/* 로그인 버튼 */}
-        <button
-          type="submit"
-          className="bg-[#A054FF] text-white py-3 rounded-lg text-sm font-semibold shadow-md hover:bg-[#933bff] transition"
-        >
-          로그인
-        </button>
-      </form>
+      <div className='flex w-full max-w-sm flex-col gap-6'>
+        <Input value={id} placeholder='아이디를 입력해주세요' onChange={(e) => setId(e.target.value)} />
+        <InputPw value={pw} onChange={(e) => setPw(e.target.value)} />
+        <Button onClick={handleSubmit}>로그인</Button>
+      </div>
 
       {/* 링크 */}
-      <div className="text-sm text-gray-500 flex gap-2">
-        <a href="/findId" className="hover:underline">
+      <div className='flex gap-2 text-sm text-gray-500'>
+        <a href='/auth/findId' className='hover:underline'>
           아이디 찾기
         </a>
         <span>|</span>
-        <a href="/find-password" className="hover:underline">
+        <a href='/auth/findPw' className='hover:underline'>
           비밀번호 찾기
         </a>
       </div>

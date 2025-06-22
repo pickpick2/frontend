@@ -18,13 +18,12 @@ const InputPw: React.FC<InputPwProps> = ({ value, onChange }) => {
         onChange={onChange}
         className='w-full border-b border-gray-300 py-2 pr-10 text-sm placeholder-gray-400 focus:outline-none'
       />
-      <button
-        type='button'
+      <div
         onClick={() => setShowPassword(!showPassword)}
         className='absolute top-1/2 right-0 -translate-y-1/2 p-2 text-gray-400'
       >
         {showPassword ? <Eye /> : <Eyeoff />}
-      </button>
+      </div>
     </div>
   );
 };
