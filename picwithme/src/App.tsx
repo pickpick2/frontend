@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
 import './App.css';
 import Login from '@/pages/auth/login';
 import AuthLayout from '@components/Layouts/AuthLayout';
@@ -11,6 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/' element={<Navigate to='/auth/login' replace />} />
         <Route path='/auth' element={<AuthLayout />}>
           <Route path='login' index element={<Login />} />
           <Route path='findId' element={<FindId />} />
