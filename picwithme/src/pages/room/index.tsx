@@ -1,6 +1,7 @@
 import Button from '@/components/ui/Button';
 import UserCard from '@/components/room/UserCard';
 import { usersData } from '@/mocks/data/room';
+import { Link2, Camera } from 'lucide-react';
 
 const Room: React.FC = () => {
   return (
@@ -12,9 +13,17 @@ const Room: React.FC = () => {
       </section>
 
       <div className='flex flex-col items-center gap-3'>
-        <Button onClick={() => {}}>시작하기</Button>
+        <Button onClick={() => {}}>
+          <div className='flex items-center justify-center gap-2'>
+            <Camera size={18} />
+            <p>시작하기</p>
+          </div>
+        </Button>
         <Button variant='secondary' onClick={() => {}}>
-          초대하기
+          <div className='flex items-center justify-center gap-2'>
+            <Link2 size={20} />
+            <p>초대하기</p>
+          </div>
         </Button>
       </div>
     </div>
