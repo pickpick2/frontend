@@ -24,7 +24,7 @@ const Album: React.FC = () => {
         />
       </div>
 
-      <section className='grid flex-1 grid-cols-2 gap-3 overflow-y-auto'>
+      <section className='grid flex-1 grid-cols-2 gap-x-3 gap-y-4 overflow-y-auto'>
         {albumData.map((photo) => (
           <PhotoSmallCard key={photo.id} photo={photo} />
         ))}
