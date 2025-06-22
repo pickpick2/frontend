@@ -1,31 +1,34 @@
-import Button from '@/components/ui/Button';
+import PhotoSmallCard from '@/components/album/PhotoSmallCard';
 import Dropdown from '@/components/ui/dropdown/Dropdown';
+import SearchBar from '@/components/ui/SearchBar';
+import { albumData } from '@/mocks/data/album';
 import { useState } from 'react';
 
 const Album: React.FC = () => {
-  const [value, setValue] = useState<string>('');
+  const [value, setValue] = useState<string>('최신순');
+  const [keyword, setKeyword] = useState<string>('');
+
+  const handleSearch = (keyword: string) => {
+    console.log(keyword);
+  };
 
   return (
-    <div className='flex flex-col items-center justify-center gap-4 p-10'>
-      <h1>Album Page</h1>
-      <p>This is the album page content.</p>
-      <Button onClick={() => {}}>로그인</Button>
-      <Button variant='secondary' onClick={() => {}}>
-        로그아웃
-      </Button>
-      <Button variant='danger' onClick={() => {}}>
-        삭제
-      </Button>
-      <Button variant='disabled' onClick={() => {}}>
-        비활성화
-      </Button>
+    <div className='flex h-full flex-col gap-4 p-3 pb-0'>
+      <div className='flex w-full gap-3'>
+        <SearchBar keyword={keyword} onChange={setKeyword} onSearch={handleSearch} className='flex-2' />
+        <Dropdown
+          value={value}
+          options={['최신순', '오래된순']}
+          onChange={(value) => setValue(value)}
+          className='flex-1'
+        />
+      </div>
 
-      <Dropdown
-        value={value}
-        options={['Option 1', 'Option 2', 'Option 3']}
-        onChange={(value) => setValue(value)}
-        placeholder='옵션을 선택하세요'
-      />
+      <section className='grid flex-1 grid-cols-2 gap-x-3 gap-y-4 overflow-y-auto'>
+        {albumData.map((photo) => (
+          <PhotoSmallCard key={photo.id} photo={photo} />
+        ))}
+      </section>
     </div>
   );
 };

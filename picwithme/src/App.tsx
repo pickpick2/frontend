@@ -6,21 +6,24 @@ import FindId from '@/pages/auth/findId';
 import Error404 from '@page/error/404';
 import FindPw from '@/pages/auth/findPw';
 import Album from '@/pages/album';
+import GlobalLayout from '@/components/Layouts/GlobalLayouts';
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Navigate to='/auth/login' replace />} />
-        <Route path='/auth' element={<AuthLayout />}>
-          <Route index element={<Navigate to='login' replace />} />
-          <Route path='login' element={<Login />} />
-          <Route path='findId' element={<FindId />} />
-          <Route path='findPw' element={<FindPw />} />
-        </Route>
-        <Route path='/album' element={<Album />} />
-        <Route path='*' element={<Error404 />} />
-      </Routes>
+      <GlobalLayout>
+        <Routes>
+          <Route path='/' element={<Navigate to='/auth/login' replace />} />
+          <Route path='/auth' element={<AuthLayout />}>
+            <Route index element={<Navigate to='login' replace />} />
+            <Route path='login' element={<Login />} />
+            <Route path='findId' element={<FindId />} />
+            <Route path='findPw' element={<FindPw />} />
+          </Route>
+          <Route path='/album' element={<Album />} />
+          <Route path='*' element={<Error404 />} />
+        </Routes>
+      </GlobalLayout>
     </BrowserRouter>
   );
 }

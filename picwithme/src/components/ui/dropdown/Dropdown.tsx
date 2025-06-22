@@ -8,11 +8,12 @@ interface DropdownProps {
   value: string;
   options: readonly string[];
   onChange: (value: string) => void;
+  icon?: React.ReactNode;
   placeholder?: string;
   className?: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ value, options, onChange, placeholder, className }) => {
+const Dropdown: React.FC<DropdownProps> = ({ value, options, onChange, icon, placeholder, className }) => {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useClickOutsideRef<HTMLDivElement>(() => setIsOpen(false));
 
@@ -27,13 +28,16 @@ const Dropdown: React.FC<DropdownProps> = ({ value, options, onChange, placehold
   };
 
   return (
-    <div ref={ref} className={cn('relative w-full', className)}>
+    <div ref={ref} className={cn('relative min-h-12 w-full', className)}>
       <button
         onClick={handleClick}
-        className='border-border flex w-full cursor-pointer items-center justify-between rounded-lg border bg-white'
+        className='border-border flex h-full w-full cursor-pointer items-center justify-between rounded-lg border bg-white'
       >
-        <p className='text-detail text-border truncate pl-4'>{value || placeholder}</p>
-        <div className='border-border border-l p-3'>
+        <span className='flex items-center gap-2 px-3'>
+          {icon}
+          <p className='text-detail text-border truncate'>{value || placeholder}</p>
+        </span>
+        <div className='border-border flex h-full items-center justify-center border-l p-2.5'>
           <ArrowDownIcon />
         </div>
       </button>
