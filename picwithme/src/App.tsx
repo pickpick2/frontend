@@ -1,10 +1,10 @@
-import { BrowserRouter, Route, Routes } from 'react-router';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
 import './App.css';
-import Login from '@page/auth/Login';
+import Login from '@/pages/auth/login';
 import AuthLayout from '@components/Layouts/AuthLayout';
-import FindId from '@page/auth/FindId';
+import FindId from '@/pages/auth/findId';
 import Error404 from '@page/error/404';
-import FindPw from '@page/auth/FindPw';
+import FindPw from '@/pages/auth/findPw';
 import Album from '@/pages/album';
 import GlobalLayout from '@/components/Layouts/GlobalLayouts';
 
@@ -13,10 +13,12 @@ function App() {
     <BrowserRouter>
       <GlobalLayout>
         <Routes>
-          <Route element={<AuthLayout />}>
-            <Route index element={<Login />} />
-            <Route path='/findId' element={<FindId />} />
-            <Route path='/findPw' element={<FindPw />} />
+          <Route path='/' element={<Navigate to='/auth/login' replace />} />
+          <Route path='/auth' element={<AuthLayout />}>
+            <Route index element={<Navigate to='login' replace />} />
+            <Route path='login' element={<Login />} />
+            <Route path='findId' element={<FindId />} />
+            <Route path='findPw' element={<FindPw />} />
           </Route>
           <Route path='/album' element={<Album />} />
           <Route path='*' element={<Error404 />} />
