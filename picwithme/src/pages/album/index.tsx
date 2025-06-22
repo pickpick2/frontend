@@ -1,5 +1,7 @@
+import PhotoSmallCard from '@/components/album/PhotoSmallCard';
 import Dropdown from '@/components/ui/dropdown/Dropdown';
 import SearchBar from '@/components/ui/SearchBar';
+import { albumData } from '@/mocks/data/album';
 import { useState } from 'react';
 
 const Album: React.FC = () => {
@@ -11,7 +13,7 @@ const Album: React.FC = () => {
   };
 
   return (
-    <div className='flex flex-col gap-4 p-3'>
+    <div className='flex h-full flex-col gap-4 p-3 pb-0'>
       <div className='flex w-full gap-3'>
         <SearchBar keyword={keyword} onChange={setKeyword} onSearch={handleSearch} className='flex-2' />
         <Dropdown
@@ -22,7 +24,11 @@ const Album: React.FC = () => {
         />
       </div>
 
-      <section></section>
+      <section className='grid flex-1 grid-cols-2 gap-3 overflow-y-auto'>
+        {albumData.map((photo) => (
+          <PhotoSmallCard key={photo.id} photo={photo} />
+        ))}
+      </section>
     </div>
   );
 };

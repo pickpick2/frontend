@@ -31,7 +31,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ keyword, onChange, onSearch, clas
         onKeyUp={handleKeyDown}
         type='text'
         placeholder='검색어를 입력하세요'
-        className='border-border text-detail focus:outline-primary-default placeholder:text-border h-full w-full rounded-lg border px-3'
+        className='border-border text-detail focus:outline-primary-default placeholder:text-border h-full w-full rounded-lg border bg-white px-3'
       />
       <button onClick={handleClick} className='absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer bg-white'>
         <SearchIcon />
