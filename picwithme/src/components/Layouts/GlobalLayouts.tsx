@@ -1,30 +1,17 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import Header from '@/components/ui/header/Header';
+import type { ReactNode } from 'react';
 
-interface LayoutProps {
+interface GlobalLayoutProps {
   children: ReactNode;
 }
 
-const GlobalLayout: React.FC<LayoutProps> = ({ children }) => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
-
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 480); // 모바일 화면 크기 조건
-  };
-
-  useEffect(() => {
-    handleResize();
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  if (isMobile) {
-    return children;
-  }
-
-  return <main className='m-auto h-screen w-[480px] border-r border-l border-[#f0f0f0]'>{children}</main>;
+const GlobalLayout: React.FC<GlobalLayoutProps> = ({ children }) => {
+  return (
+    <div className='m-auto h-screen w-[480px] overflow-y-hidden border-r border-l border-[#f0f0f0]'>
+      <Header />
+      <main className='h-full overflow-y-auto'>{children}</main>
+    </div>
+  );
 };
 
 export default GlobalLayout;
