@@ -7,6 +7,7 @@ const Header: React.FC = () => {
 
   const headerMap: Record<string, ReactNode> = {
     '/album': <TitleHeader title='내 앨범' />,
+    '/room/new': <TitleHeader title='방 생성' />,
     // '/other': <TitleHeader title='다른 페이지' />,
   };
 
