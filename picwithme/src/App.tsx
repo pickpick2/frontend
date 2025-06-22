@@ -5,6 +5,7 @@ import AuthLayout from '@components/Layouts/AuthLayout';
 import FindId from '@/pages/auth/findId';
 import Error404 from '@page/error/404';
 import FindPw from '@/pages/auth/findPw';
+import Room from '@/pages/room';
 import NewRoom from '@/pages/room/new';
 import Album from '@/pages/album';
 import GlobalLayout from '@/components/Layouts/GlobalLayouts';
@@ -21,6 +22,7 @@ function App() {
             <Route path='findId' element={<FindId />} />
             <Route path='findPw' element={<FindPw />} />
           </Route>
+          <Route path='/room' element={<Room />} />
           <Route path='/room/new' element={<NewRoom />} />
           <Route path='/album' element={<Album />} />
           <Route path='*' element={<Error404 />} />
