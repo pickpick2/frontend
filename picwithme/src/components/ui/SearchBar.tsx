@@ -1,4 +1,4 @@
-import SearchIcon from '@/assets/icons/search.svg?react';
+import { Search } from 'lucide-react';
 import { cn } from '@/utils/cn';
 
 interface SearchBarProps {
@@ -24,7 +24,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ keyword, onChange, onSearch, clas
   };
 
   return (
-    <div className={cn('relative min-h-12 w-full', className)}>
+    <div className={cn('relative min-h-10 w-full', className)}>
       <input
         value={keyword}
         onChange={(e) => onChange(e.target.value)}
@@ -34,7 +34,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ keyword, onChange, onSearch, clas
         className='border-border text-detail focus:outline-primary-default placeholder:text-border h-full w-full rounded-lg border bg-white px-3'
       />
       <button onClick={handleClick} className='absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer bg-white'>
-        <SearchIcon />
+        <Search size={16} className='text-border' />
       </button>
     </div>
   );

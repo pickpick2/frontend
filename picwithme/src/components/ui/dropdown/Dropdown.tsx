@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ArrowDownIcon from '@/assets/icons/arrowDown.svg?react';
+import { ChevronDown } from 'lucide-react';
 import DropdownList from '@/components/ui/dropdown/DropdownList';
 import useClickOutsideRef from '@/hooks/useClickOutsideRef';
 import { cn } from '@/utils/cn';
@@ -28,7 +28,7 @@ const Dropdown: React.FC<DropdownProps> = ({ value, options, onChange, icon, pla
   };
 
   return (
-    <div ref={ref} className={cn('relative min-h-12 w-full', className)}>
+    <div ref={ref} className={cn('relative min-h-10 w-full', className)}>
       <button
         onClick={handleClick}
         className='border-border flex h-full w-full cursor-pointer items-center justify-between rounded-lg border bg-white'
@@ -37,8 +37,8 @@ const Dropdown: React.FC<DropdownProps> = ({ value, options, onChange, icon, pla
           {icon}
           <p className='text-detail text-border truncate'>{value || placeholder}</p>
         </span>
-        <div className='border-border flex h-full items-center justify-center border-l p-2.5'>
-          <ArrowDownIcon />
+        <div className='border-border flex h-full items-center justify-center border-l p-2'>
+          <ChevronDown size={18} className='text-border' />
         </div>
       </button>
       {isOpen && <DropdownList options={options} onChange={handleClickOption} />}
