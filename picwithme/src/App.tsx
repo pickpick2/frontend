@@ -9,6 +9,9 @@ import Room from '@/pages/room';
 import NewRoom from '@/pages/room/new';
 import Album from '@/pages/album';
 import GlobalLayout from '@/components/Layouts/GlobalLayouts';
+import SignUp from './pages/auth/signUp';
+import PrivacyPolicy from './pages/auth/privacyPolicy';
+import ProfileSignUp from './pages/auth/signUp/profileSignUp';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
             <Route path='login' element={<Login />} />
             <Route path='findId' element={<FindId />} />
             <Route path='findPw' element={<FindPw />} />
+            <Route path='signUp' element={<SignUp />} />
+            <Route path='privacyPolicy' element={<PrivacyPolicy />} />
+            <Route path='profileSignUp' element={<ProfileSignUp />} />
           </Route>
           <Route path='/room' element={<Room />} />
           <Route path='/room/new' element={<NewRoom />} />

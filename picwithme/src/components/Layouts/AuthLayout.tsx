@@ -1,8 +1,8 @@
-import { Outlet } from "react-router";
+import { Outlet } from 'react-router';
 
 const AuthLayout = () => {
   return (
-    <main className="w-full h-full flex flex-col items-center justify-center gap-8 p-16 bg-white">
+    <main className='flex h-full w-full flex-col items-center justify-center gap-8 bg-white p-16'>
       <Outlet />
     </main>
   );

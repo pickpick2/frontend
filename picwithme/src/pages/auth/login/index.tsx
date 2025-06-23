@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Input from '@/components/ui/input/Input';
-import InputPw from '@/components/ui/input/inputPw';
+import InputPw from '@/components/ui/input/InputPw';
 import Button from '@/components/ui/Button';
 
 const Login = () => {
