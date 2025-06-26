@@ -3,7 +3,7 @@ import { cn } from '@/utils/cn';
 interface ButtonProps {
   onClick: () => void;
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'danger' | 'disabled';
+  variant?: 'primary' | 'secondary' | 'danger' | 'cancel' | 'disabled';
   className?: string;
 }
 
@@ -11,6 +11,7 @@ const variantStyle: Record<string, string> = {
   primary: 'bg-primary-default text-white hover:bg-primary-default/90 transition-colors',
   secondary: 'border border-primary-default hover:bg-primary-lighter text-primary-default ',
   danger: 'bg-danger text-white hover:bg-danger/90 transition-colors',
+  cancel: 'bg-gray-300 text-gray-600 hover:bg-gray-300/80 transition-colors',
   disabled: 'bg-primary-lighter text-gray-200 cursor-not-allowed',
 } as const;
 

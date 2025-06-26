@@ -13,7 +13,7 @@ const Album: React.FC = () => {
   };
 
   return (
-    <div className='flex h-full flex-col gap-4 p-3 pb-0'>
+    <main className='flex h-full flex-col gap-4 p-3 pb-0'>
       <div className='flex w-full gap-3'>
         <SearchBar keyword={keyword} onChange={setKeyword} onSearch={handleSearch} className='flex-2' />
         <Dropdown
@@ -29,7 +29,7 @@ const Album: React.FC = () => {
           <PhotoSmallCard key={photo.id} photo={photo} />
         ))}
       </section>
-    </div>
+    </main>
   );
 };
 export default Album;
