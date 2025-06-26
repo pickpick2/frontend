@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router';
 import './App.css';
+import MainPage from '@/pages';
 import Login from '@/pages/auth/login';
 import AuthLayout from '@components/Layouts/AuthLayout';
 import FindId from '@/pages/auth/findId';
@@ -18,7 +19,9 @@ function App() {
     <BrowserRouter>
       <GlobalLayout>
         <Routes>
-          <Route path='/' element={<Navigate to='/auth/login' replace />} />
+          {/* TODO: 추후 로그인 여부에 따라 접근 가능한 페이지 설정 */}
+          {/* <Route path='/' element={<Navigate to='/auth/login' replace />} /> */}
+          <Route path='/' element={<MainPage />} />
           <Route path='/auth' element={<AuthLayout />}>
             <Route index element={<Navigate to='login' replace />} />
             <Route path='login' element={<Login />} />
