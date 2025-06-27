@@ -7,6 +7,7 @@
   --color-text: #0b0b0b;
   --color-text-white: #ffffff;
   --color-border: #afafaf;
+  --color-overlay: rgba(0, 0, 0, 0.5);
 
   --color-success: #82dd55;
   --color-warning: #edb95e;

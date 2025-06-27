@@ -19,7 +19,7 @@ const NewRoom: React.FC = () => {
   };
 
   return (
-    <div className='flex h-full flex-col items-center justify-center gap-20 px-20'>
+    <main className='flex h-full flex-col items-center justify-center gap-20 px-20'>
       <h1 className='text-heading1 font-semibold'>방 정보를 설정해 주세요.</h1>
       <section className='flex w-full flex-col gap-4'>
         <Input value={title} onChange={(e) => setTitle(e.target.value)} placeholder='방 제목' />
@@ -32,7 +32,7 @@ const NewRoom: React.FC = () => {
         />
       </section>
       <Button onClick={handleCreateRoom}>방 만들기</Button>
-    </div>
+    </main>
   );
 };
 

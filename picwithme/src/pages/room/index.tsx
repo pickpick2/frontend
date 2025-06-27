@@ -5,7 +5,7 @@ import { Link2, Camera } from 'lucide-react';
 
 const Room: React.FC = () => {
   return (
-    <div className='flex h-full flex-col justify-center gap-6 px-20'>
+    <main className='flex h-full flex-col justify-center gap-6 px-20'>
       <section className='flex flex-col items-center gap-2'>
         {usersData.map((user) => (
           <UserCard key={user.id} user={user} />
@@ -26,7 +26,7 @@ const Room: React.FC = () => {
           </div>
         </Button>
       </div>
-    </div>
+    </main>
   );
 };
 
