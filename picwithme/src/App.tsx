@@ -13,6 +13,7 @@ import GlobalLayout from '@/components/Layouts/GlobalLayouts';
 import SignUp from './pages/auth/signUp';
 import PrivacyPolicy from './pages/auth/privacyPolicy';
 import ProfileSignUp from './pages/auth/signUp/profileSignUp';
+import Select from './pages/select';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path='/room' element={<Room />} />
           <Route path='/room/new' element={<NewRoom />} />
           <Route path='/album' element={<Album />} />
+          <Route path='/select' element={<Select />} />
           <Route path='*' element={<Error404 />} />
         </Routes>
       </GlobalLayout>
