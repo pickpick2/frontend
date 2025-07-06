@@ -14,6 +14,7 @@ import SignUp from './pages/auth/signUp';
 import PrivacyPolicy from './pages/auth/privacyPolicy';
 import ProfileSignUp from './pages/auth/signUp/profileSignUp';
 import Select from './pages/select';
+import DrawRoom from '@/pages/room/draw';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           </Route>
           <Route path='/room' element={<Room />} />
           <Route path='/room/new' element={<NewRoom />} />
+          <Route path='/room/draw' element={<DrawRoom />} />
           <Route path='/album' element={<Album />} />
           <Route path='/select' element={<Select />} />
           <Route path='*' element={<Error404 />} />

@@ -1,9 +1,10 @@
+import type { ButtonVariant } from '@/types/common';
 import { cn } from '@/utils/cn';
 
 interface ButtonProps {
   onClick: () => void;
   children: React.ReactNode;
-  variant?: 'primary' | 'secondary' | 'danger' | 'cancel' | 'disabled';
+  variant?: ButtonVariant;
   className?: string;
 }
 
