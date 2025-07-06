@@ -35,7 +35,7 @@ const BackgroundFrame = ({ imageUrl, boxes }: Props) => {
   }, [stream]);
 
   return (
-    <div className='relative aspect-[2/3] w-full max-w-[600px]'>
+    <div className='relative aspect-[2/3] w-11/12 max-w-[600px]'>
       <img src={imageUrl} alt='배경 이미지' className='absolute inset-0 h-full w-full object-fill' />
       {boxes.map((box, idx) => (
         <video

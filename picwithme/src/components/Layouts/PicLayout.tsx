@@ -4,7 +4,7 @@ import { userData } from '@/mocks/data/user';
 
 const PicLayout = () => {
   return (
-    <main className='flex h-full w-full flex-col items-center justify-center gap-8 bg-white p-16'>
+    <main className='flex h-full w-full flex-col gap-4 bg-white'>
       <ActiveUsersHeader userList={userData.userList} />
       <Outlet />
     </main>
