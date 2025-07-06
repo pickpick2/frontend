@@ -1,18 +1,16 @@
-interface UserList {
-  name: string;
-  thumbnail: string;
-}
+import type { User } from '@/types/room.ts';
+import logoImg from '@/assets/images/logo.png';
 
 interface ActiveUsersHeaderProps {
-  userList: UserList[];
+  userList: User[];
 }
 
 const ActiveUsersHeader: React.FC<ActiveUsersHeaderProps> = ({ userList }) => {
   return (
     <div className='sticky top-0 z-20 flex h-16 w-full shrink-0 items-center justify-between bg-white px-4'>
-      <img src='' alt='메인로고'></img>
+      <img src={logoImg} alt='Logo' className='logo' width={84} />
       {userList.map((user) => (
-        <img className='h-12 w-12 rounded-full object-cover' src={user.thumbnail} alt='유저 썸네일' />
+        <img className='h-12 w-12 rounded-full object-cover' id={user.id} src={user.name} alt='유저 썸네일' />
       ))}
     </div>
   );

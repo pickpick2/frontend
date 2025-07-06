@@ -8,3 +8,7 @@ export interface UserInRoom extends User {
   isHost: boolean;
   isReady: boolean;
 }
+
+export interface UserList {
+  userList: User[];
+}
