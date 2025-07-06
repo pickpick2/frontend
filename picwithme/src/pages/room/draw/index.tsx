@@ -5,7 +5,8 @@ import PenIcon from '@/assets/icons/pen.svg?react';
 import StickerIcon from '@/assets/icons/sticker.svg?react';
 import TextIcon from '@/assets/icons/text.svg?react';
 import tempImg from '@/assets/images/temp.png';
-import PenSettings from '@/assets/draw/PenSettings';
+import PenSettings from '@/components/draw/PenSettings';
+import StickerSettings from '@/components/draw/StickerSettings';
 
 const DrawRoom = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -36,6 +37,22 @@ const DrawRoom = () => {
     };
   }, []);
 
+  const handleTabChange = (tabId: string) => {
+    if (!fabricCanvas.current) return;
+
+    switch (tabId) {
+      case 'pen':
+        fabricCanvas.current.isDrawingMode = true;
+        break;
+      case 'sticker':
+        fabricCanvas.current.isDrawingMode = false;
+        break;
+      case 'text':
+        fabricCanvas.current.isDrawingMode = false;
+        break;
+    }
+  };
+
   const handleColorChange = (colorHex: string) => {
     if (!fabricCanvas.current) return;
 
@@ -46,6 +63,18 @@ const DrawRoom = () => {
     if (!fabricCanvas.current) return;
 
     fabricCanvas.current.freeDrawingBrush!.width = value[0];
+  };
+
+  const handleStickerClick = (stickerSrc: string) => {
+    if (!fabricCanvas.current) return;
+
+    const imgElement = document.createElement('img');
+    imgElement.src = stickerSrc;
+
+    const sticker = new fabric.FabricImage(imgElement);
+    fabricCanvas.current.add(sticker);
+    fabricCanvas.current.centerObject(sticker);
+    fabricCanvas.current.setActiveObject(sticker);
   };
 
   return (
@@ -63,9 +92,10 @@ const DrawRoom = () => {
         ]}
         tabPanels={[
           <PenSettings onColorChange={handleColorChange} onWidthChange={handleWidthChange} />,
-          <div className='h-60'>Sticker</div>,
+          <StickerSettings onStickerClick={handleStickerClick} />,
           <div className='h-60'>Text</div>,
         ]}
+        onTabChange={handleTabChange}
       />
     </div>
   );
