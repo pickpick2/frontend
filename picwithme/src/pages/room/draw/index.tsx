@@ -7,6 +7,7 @@ import TextIcon from '@/assets/icons/text.svg?react';
 import tempImg from '@/assets/images/temp.png';
 import PenSettings from '@/components/draw/PenSettings';
 import StickerSettings from '@/components/draw/StickerSettings';
+import TextSettings from '@/components/draw/TextSettings';
 
 const DrawRoom = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -77,6 +78,22 @@ const DrawRoom = () => {
     fabricCanvas.current.setActiveObject(sticker);
   };
 
+  const hadleAddText = (fontSize: number) => {
+    if (!fabricCanvas.current) return;
+
+    const text = new fabric.Textbox('텍스트 입력', {
+      left: 50,
+      top: 50,
+      fontSize: fontSize,
+      fill: '#000000',
+      width: 200,
+    });
+
+    fabricCanvas.current.add(text);
+    fabricCanvas.current.setActiveObject(text);
+    fabricCanvas.current.renderAll();
+  };
+
   return (
     <div className='flex h-full flex-col overflow-hidden'>
       <div className='relative flex-1'>
@@ -93,7 +110,7 @@ const DrawRoom = () => {
         tabPanels={[
           <PenSettings onColorChange={handleColorChange} onWidthChange={handleWidthChange} />,
           <StickerSettings onStickerClick={handleStickerClick} />,
-          <div className='h-60'>Text</div>,
+          <TextSettings onAddText={hadleAddText} />,
         ]}
         onTabChange={handleTabChange}
       />
