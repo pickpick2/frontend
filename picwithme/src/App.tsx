@@ -13,8 +13,10 @@ import GlobalLayout from '@/components/Layouts/GlobalLayouts';
 import SignUp from './pages/auth/signUp';
 import PrivacyPolicy from './pages/auth/privacyPolicy';
 import ProfileSignUp from './pages/auth/signUp/profileSignUp';
-import Select from './pages/select';
 import DrawRoom from '@/pages/room/draw';
+import PicLayout from './components/Layouts/PicLayout';
+import Photo from './pages/room/photo';
+import Select from './pages/room/select';
 
 function App() {
   return (
@@ -35,9 +37,12 @@ function App() {
           </Route>
           <Route path='/room' element={<Room />} />
           <Route path='/room/new' element={<NewRoom />} />
-          <Route path='/room/draw' element={<DrawRoom />} />
           <Route path='/album' element={<Album />} />
-          <Route path='/select' element={<Select />} />
+          <Route path='/room' element={<PicLayout />}>
+            <Route path='select' element={<Select />} />
+            <Route path='photo' element={<Photo />} />
+            <Route path='draw' element={<DrawRoom />} />
+          </Route>
           <Route path='*' element={<Error404 />} />
         </Routes>
       </GlobalLayout>

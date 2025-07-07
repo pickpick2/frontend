@@ -9,7 +9,7 @@ const Header: React.FC = () => {
     '/album': <TitleHeader title='내 앨범' />,
     '/room': <TitleHeader title='대기실' />,
     '/room/new': <TitleHeader title='방 생성' />,
-    '/room/draw': <TitleHeader title='사진 꾸미기' />,
+    // '/room/draw': <TitleHeader title='사진 꾸미기' />,
     // '/other': <TitleHeader title='다른 페이지' />,
   };
 
