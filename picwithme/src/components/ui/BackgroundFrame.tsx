@@ -46,7 +46,7 @@ const BackgroundFrame = ({ imageUrl, boxes }: Props) => {
           autoPlay
           muted
           playsInline
-          className='absolute scale-x-[-1] overflow-hidden rounded-lg object-cover'
+          className='absolute scale-x-[-1] overflow-hidden object-cover'
           style={{
             top: `${box.top}%`,
             left: `${box.left}%`,

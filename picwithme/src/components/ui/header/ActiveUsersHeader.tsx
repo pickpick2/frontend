@@ -12,7 +12,7 @@ const ActiveUsersHeader: React.FC<ActiveUsersHeaderProps> = ({ userList }) => {
       <img src={logoImg} alt='Logo' className='logo' width={40} />
       <div className='flex flex-row gap-2'>
         {userList.map((user) => (
-          <Avatar key={user.id} src={user.img} className='bg-warning' />
+          <Avatar key={user.id} src={user.img} />
         ))}
       </div>
     </div>
