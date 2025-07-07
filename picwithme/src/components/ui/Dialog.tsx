@@ -1,5 +1,6 @@
 import Portal from '@/components/Portal';
 import Button from '@/components/ui/Button';
+import type { ButtonVariant } from '@/types/common';
 import { X } from 'lucide-react';
 
 interface DialogProps {
@@ -7,7 +8,7 @@ interface DialogProps {
   onConfirm: () => void;
   onClose: () => void;
   confirmText?: string;
-  variant?: 'primary' | 'secondary' | 'danger' | 'cancel' | 'disabled';
+  variant?: ButtonVariant;
 }
 
 const Dialog: React.FC<DialogProps> = ({ children, onConfirm, onClose, confirmText = '확인', variant = 'primary' }) => {
