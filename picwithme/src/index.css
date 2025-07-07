@@ -24,6 +24,12 @@
   --text-detail: 12px;
 }
 
+@theme {
+  --breakpoint-sm: 18rem;
+  --breakpoint-md: 22rem;
+  --breakpoint-lg: 26rem;
+}
+
 @font-face {
   font-family: "PyeojinGothic";
   font-weight: 300;
