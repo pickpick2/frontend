@@ -6,6 +6,7 @@ export interface Box {
 }
 
 export interface Image {
+  id: number;
   imageUrl: string;
   boxes: Box[];
 }
