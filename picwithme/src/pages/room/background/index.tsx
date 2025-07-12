@@ -1,9 +1,11 @@
+import Carousel from '@/components/background/carousel';
 import PickerLayout from '@/components/Layouts/PickerLayout';
+import { backImageList } from '@/mocks/data/image';
 
 const BackChoice = () => {
   return (
     <PickerLayout step='background'>
-      <div> 케러셀 추후 구현 예정</div>
+      <Carousel imageList={backImageList} />
     </PickerLayout>
   );
 };
