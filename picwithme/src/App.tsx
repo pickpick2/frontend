@@ -17,6 +17,10 @@ import DrawRoom from '@/pages/room/draw';
 import PicLayout from './components/Layouts/PicLayout';
 import Photo from './pages/room/photo';
 import Select from './pages/room/select';
+import FrameChoice from './pages/room/frame';
+import PreviewBack from './pages/room/background/preview';
+import PreviewFrame from './pages/room/frame/preview';
+import BackChoice from './pages/room/background';
 
 function App() {
   return (
@@ -39,6 +43,10 @@ function App() {
           <Route path='/room/new' element={<NewRoom />} />
           <Route path='/album' element={<Album />} />
           <Route path='/room' element={<PicLayout />}>
+            <Route path='frame' element={<FrameChoice />} />
+            <Route path='back' element={<BackChoice />} />
+            <Route path='framePreview' element={<PreviewFrame />} />
+            <Route path='backPreview' element={<PreviewBack />} />
             <Route path='select' element={<Select />} />
             <Route path='photo' element={<Photo />} />
             <Route path='draw' element={<DrawRoom />} />
