@@ -1,12 +1,13 @@
 import { useMutation } from '@tanstack/react-query';
 import { axiosInstance, type Response } from './axios';
+import { authApi } from '@/constants/api';
 
 interface GuestLoginResponse {
   memberId: number;
 }
 
 const guestLogin = (): Promise<Response<GuestLoginResponse>> => {
-  return axiosInstance.post('/api/auth/guest').then((res) => res.data);
+  return axiosInstance.post(authApi.GUESTLOGIN).then((res) => res.data);
 };
 
 export function useGuestLogin(onSuccess: () => void, onError?: () => void) {
@@ -15,9 +16,10 @@ export function useGuestLogin(onSuccess: () => void, onError?: () => void) {
     onSuccess: () => {
       onSuccess(); // 컴포넌트에서 정의한 행동 실행
     },
-    onError: (err) => {
-      console.error(err);
-      alert('게스트 로그인 실패! 다시 시도해주세요.');
+    onError: (err: any) => {
+      // 서버에서 응답 메시지가 있을 경우 추출해서 보여주기
+      const msg = err?.response?.data?.message || '게스트 로그인 실패';
+      alert(msg);
       onError?.();
     },
   });
