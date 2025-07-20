@@ -14,7 +14,10 @@ const Login = () => {
   };
 
   const { push } = useInternalRouter();
-  const { mutate } = useGuestLogin(() => {
+  const { mutate } = useGuestLogin((response) => {
+    const { memberId, accessToken } = response.data;
+    sessionStorage.setItem('memberId', String(memberId));
+    sessionStorage.setItem('accessToken', accessToken);
     push('/room/new');
   });
 
